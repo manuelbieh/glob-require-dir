@@ -15,7 +15,7 @@ const transformFunctions = {
         return path.basename(file, path.extname(file));
     },
     camelcase(str) {
-        return str.replace(/[\/_-]./ig, (s) => s.substring(1).toUpperCase());
+        return str.replace(/[\\\/_-]./ig, (s) => s.substring(1).toUpperCase());
     },
     snakecase(str) {
         return str.replace(/([A-Z])/g, ($1) => '_'+$1.toLowerCase());
@@ -58,6 +58,7 @@ module.exports = (...args) => {
 
     const getFileKey = (file, transformActions) => {
 
+        // file = path.relative(basePath, file);
         file = pathCleanup(file);
         file = `${options.prepend ? options.prepend + '/' : ''}${file}${options.append ? '/' + options.append : ''}`;
 
@@ -81,13 +82,14 @@ module.exports = (...args) => {
 
     };
 
+    // const files = glob.sync(`${basePath}/${recursive ? '**/' : ''}*.{${ext}}`, globOptions);
     const files = glob.sync(`${recursive ? '**/' : ''}*.{${ext}}`, globOptions);
-    // files = glob.sync(`${basePath}${recursive ? '/**' : ''}/*.{${ext}}`, globOptions);
 
     const filesMap = {};
 
     files.forEach((file) => {
 
+        //const filePath = file;
         const filePath = path.resolve(path.join(basePath, file));
 
         if (filePath !== parentFile) {
@@ -98,6 +100,7 @@ module.exports = (...args) => {
                 loadedModule = loadedModule.default;
             }
 
+            // filesMap[getFileKey(filePath)] = loadedModule;
             filesMap[getFileKey(file)] = loadedModule;
 
         }
