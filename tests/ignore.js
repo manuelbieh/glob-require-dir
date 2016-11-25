@@ -1,8 +1,9 @@
 const direx = require('..');
 
-const ignore = direx('./ignore', {
+const ignore = direx({
     recursive: true,
-    ignore: ['folder/**']
+    ignore: ['folder/**'],
+    cwd: 'ignore'
 });
 
 module.exports = {

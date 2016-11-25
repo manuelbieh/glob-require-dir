@@ -1,10 +1,9 @@
 const direx = require('..');
 
-const esModules = direx('./es-modules', {
-    esModules: true
+const esModules = direx({
+    esModules: true,
+    cwd: 'es-modules'
 });
-
-console.log(esModules);
 
 module.exports = {
     esModules
