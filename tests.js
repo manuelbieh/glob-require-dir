@@ -12,7 +12,7 @@ const {
 
 const { recursive } = require('./tests/recursive');
 const { esModules } = require('./tests/es-modules');
-const { ignore } = require('./tests/ignore');
+const { ignore, pattern, cwd, cwdAndPattern } = require('./tests/options');
 
 assert.deepEqual(camelCase, {
     camelCase1: 'camelCase1',
@@ -56,4 +56,16 @@ assert.deepEqual(esModules, {
 
 assert.deepEqual(ignore, {
     loadMe: 'load-me'
+});
+
+assert.deepEqual(pattern, {
+    optionsPatternPattern: 'pattern'
+});
+
+assert.deepEqual(cwd, {
+    pattern: 'pattern'
+});
+
+assert.deepEqual(cwdAndPattern, {
+    patternPattern: 'pattern'
 });
