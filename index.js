@@ -15,7 +15,7 @@ const transformFunctions = {
         return path.basename(file, path.extname(file));
     },
     camelcase(str) {
-        return str.replace(/[\\\/_-]./ig, (s) => s.substring(1).toUpperCase());
+        return str.replace(/([\\\/_-])./ig, (s) => s.substring(1).toUpperCase());
     },
     snakecase(str) {
         return str.replace(/([A-Z])/g, ($1) => '_'+$1.toLowerCase());
@@ -30,13 +30,12 @@ const transformFunctions = {
         return str.toUpperCase();
     },
     lowercase(str) {
-        return str.toUpperCase();
+        return str.toLowerCase();
     }
 };
 
 module.exports = (...args) => {
 
-    // const dir = (args.length === 1 || args.length === 2) && typeof args[0] === 'string' ? args[0] : '.';
     const dir = (args.length === 1 || args.length === 2) && typeof args[0] === 'string' ? args[0] : parentDir;
     const options = args.length === 1 && typeof args[0] === 'object' ? args[0] : args[1] || {};
 
