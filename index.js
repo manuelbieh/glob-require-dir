@@ -60,7 +60,7 @@ module.exports = (...args) => {
     const getFileKey = (file, transformActions) => {
 
         file = pathCleanup(file);
-        file = `${options.prepend ? options.prepend + '/' : ''}${file}${options.append ? '/' + options.append : ''}`;
+        // file = `${options.prepend ? options.prepend + '/' : ''}${file}${options.append ? '/' + options.append : 'xxx'}`;
 
         transformActions = transformActions || transform;
 
@@ -78,7 +78,7 @@ module.exports = (...args) => {
 
         });
 
-        return file;
+        return `${options.prepend || ''}${file}${options.append || ''}`;
 
     };
 
