@@ -20,7 +20,7 @@ const example3 = direx({
 
 const example4 = direx('.');
 
-const example5 = direx('transforms', {
+const example5 = direx(['transforms', 'options'], {
     recursive: true,
     transform: ['camelcase', 'ucfirst', 'basename'],
     // cwd: 'transforms',
@@ -28,10 +28,10 @@ const example5 = direx('transforms', {
     append: 'Controller'
 });
 
-console.log('1', example1);
-console.log('2', example2);
-console.log('3', example3);
-console.log('4', example4);
+// console.log('1', example1);
+// console.log('2', example2);
+// console.log('3', example3);
+// console.log('4', example4);
 console.log('5', example5);
 process.exit();
 

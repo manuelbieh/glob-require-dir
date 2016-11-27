@@ -54,7 +54,7 @@ module.exports = (...args) => {
     const transform = options.transform || ['camelcase', 'basename'];
     const recursive = options.recurse || options.recursive;
 
-    const ext = options.ext || options.extensions || ['js', 'json'];
+    const ext = options.ext || options.extensions || Object.keys(require.extensions).map((ext) => ext.substring(1));
     const esModules = options.esModules === false ? false : true;
 
     const getFileKey = (file, transformActions) => {
