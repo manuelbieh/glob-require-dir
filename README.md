@@ -83,7 +83,7 @@ If two arguments are given, the first argument will be used as **minimatch patte
 
 `glob-require-dir` uses transformer functions (or short: *transforms*) when creating the keys for the exported hash. By default the full path of a matching file will be camelCased and then basenamed (in other words: the file extension will be dropped). There are a number of supported transforms (UPPERCASE, lowercase, camelCase, snake_case, …) but you can also deactivate it completely or write your own **custom transformer functions**. Custom transformer functions take the current filename as only argument and must return the transformed key as string. 
 
-Example: 
+#### Example: 
 ```
 globRequireDir({
   transform: [
@@ -106,7 +106,7 @@ The `recursive` option prefixes your pattern (no matter if a custom pattern is g
 
 Appends a string to the transformed key. 
 
-Example:
+#### Example:
 ```
 globRequireDir({ 
   cwd: './Controllers',
