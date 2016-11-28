@@ -1,6 +1,8 @@
 # glob-require-dir
 
-Node helper module to `require()` complete directories. Allows you to traverse through directories and `require()` every file that can be `require()`'d. All `require()`'d files are returned as hash with customizable keys. A [minimatch](https://github.com/isaacs/minimatch) pattern can be provided as well as [node-glob](https://github.com/isaacs/node-glob#options) options.
+Node helper module to `require()` complete directories. 
+
+Allows you to traverse through directories and `require()` every file that can be `require()`'d. All `require()`'d files are returned as hash with customizable keys. A [minimatch](https://github.com/isaacs/minimatch) pattern can be provided as well as [node-glob](https://github.com/isaacs/node-glob#options) options.
 
 This module was inspired by [require-dir](https://www.npmjs.com/package/require-dir) - a great module to require directories but mostly without options to modify the outcome of the require process.
 
