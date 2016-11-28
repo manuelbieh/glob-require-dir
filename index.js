@@ -36,7 +36,7 @@ const transformFunctions = {
 
 module.exports = (...args) => {
 
-    let pattern = (args.length === 1 || args.length === 2) && typeof args[0] === 'string' ? args[0] : null;
+    const pattern = (args.length === 1 || args.length === 2) && typeof args[0] === 'string' ? args[0] : '';
     const options = args.length === 1 && typeof args[0] === 'object' ? args[0] : args[1] || {};
 
     const cwd = options.cwd || (options.globOptions && options.globOptions.cwd);
@@ -60,7 +60,6 @@ module.exports = (...args) => {
     const getFileKey = (file, transformActions) => {
 
         file = pathCleanup(file);
-        // file = `${options.prepend ? options.prepend + '/' : ''}${file}${options.append ? '/' + options.append : 'xxx'}`;
 
         transformActions = transformActions || transform;
 
@@ -82,8 +81,7 @@ module.exports = (...args) => {
 
     };
 
-    pattern = pattern ? `${pattern.replace(/(\/|\\)*$/g,'')}/` : '';
-    const files = glob.sync(`${pattern}${recursive ? '**/' : ''}*.{${ext}}`, globOptions);
+    const files = glob.sync(`${recursive ? '**/' : ''}${pattern}*.{${ext}}`, globOptions);
 
     const filesMap = {};
 

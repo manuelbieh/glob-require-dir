@@ -1,5 +1,5 @@
 {
-  "name": "direx",
+  "name": "glob-require-dir",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,20 +10,24 @@
     "test": "node tests.js"
   },
   "keywords": [
-      "recursive",
-      "folder",
-      "directory",
-      "dir",
-      "require",
-      "import",
-      "export",
-      "modules",
-      "es6",
-      "es2015"
+    "recursive",
+    "folder",
+    "directory",
+    "dir",
+    "require",
+    "import",
+    "export",
+    "modules",
+    "es6",
+    "es2015"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "glob": "^7.1.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.11.1"
   }
 }

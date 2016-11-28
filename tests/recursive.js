@@ -5,6 +5,12 @@ const recursive = direx({
     cwd: 'recursive'
 });
 
+const recursivePattern = direx('**/', {
+    cwd: 'recursive'
+});
+
+
 module.exports = {
-    recursive
+    recursive,
+    recursivePattern
 };

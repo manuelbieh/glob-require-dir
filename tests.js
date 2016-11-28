@@ -10,7 +10,7 @@ const {
     custom
 } = require('./tests/transforms');
 
-const { recursive } = require('./tests/recursive');
+const { recursive, recursivePattern } = require('./tests/recursive');
 const { esModules } = require('./tests/es-modules');
 const { ignore, pattern, cwd, cwdAndPattern } = require('./tests/options');
 
@@ -46,6 +46,11 @@ assert.deepEqual(custom, {
 });
 
 assert.deepEqual(recursive, {
+    oneTwo: 'OneTwo',
+    oneTwoThree: 'OneTwoThree'
+});
+
+assert.deepEqual(recursivePattern, {
     oneTwo: 'OneTwo',
     oneTwoThree: 'OneTwoThree'
 });

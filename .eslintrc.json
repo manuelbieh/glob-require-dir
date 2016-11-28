@@ -1,29 +1,17 @@
 {
     "env": {
-        "browser": true,
         "es6": true,
         "commonjs": true,
         "node": true
     },
-    "globals": {
-        "__DEV__": true
-    },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
     ],
     "installedESLint": true,
     "parser": "babel-eslint",
     "parserOptions": {
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
-            "jsx": true
-        },
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
     "rules": {
         "indent": [2, 4, {"SwitchCase": 1}],
         "linebreak-style": [2, "unix"],
@@ -81,18 +69,6 @@
         "prefer-arrow-callback": 2,
         "arrow-parens": [2, "always"],
         "space-in-parens": [2, "never"],
-        "react/no-danger": 1,
-        "react/jsx-first-prop-new-line": [1, "multiline"],
-        "react/prefer-es6-class": 2,
-        "react/jsx-wrap-multilines": 2,
-        "react/require-render-return": 2,
-        "react/jsx-max-props-per-line": [1, {"maximum": 3}],
-        "react/self-closing-comp": 2,
-        "react/no-did-mount-set-state": 1,
-        "react/no-unused-prop-types": 2,
-        "react/jsx-indent": 2,
-        "react/jsx-equals-spacing": 2,
-        "react/jsx-pascal-case": 2,
-        "no-console": 0
+        "no-console": 1
     }
 }
