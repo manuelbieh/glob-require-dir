@@ -102,7 +102,7 @@ The `recursive` option prefixes your pattern (no matter if a custom pattern is g
 
 
 ### .append [String]
-Default: `''`
+**Default:** `''`
 
 Appends a string to the transformed key. 
 
@@ -123,21 +123,21 @@ would yield an object like:
 ```
 
 ### .prepend [String]
-Default: `''`
+**Default:** `''`
 
 Same as append, but prepends …
 
 ### .esModules [Boolean]
-Default: `false`
+**Default:** `false`
 
 Enabling this option makes `glob-require-dir` to look for a property `default` in the export of the required file. If a `default` export is found, this will be used as only export.
 
 ### .globOptions [Object]
-Default: `null`
+**Default:** `null`
 
 All glob options with the exception of `cwd` (which is used internally) and `nodir` (which is always `false`) will be passed 1:1 to the `glob.sync()` call.
 
 ### .ignore [Array, String]
-Default: `['**/node_modules**']`
+**Default:** `['**/node_modules**']`
 
 Shortcut to globOptions.ignore for convenience. You can specify a pattern or an array of patterns which will be ignored while loading files.
