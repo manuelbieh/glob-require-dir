@@ -69,7 +69,7 @@ If no argument is given, all files from the current working dir will be loaded.
 If only one argument is specified and the argument is a **string**, it will be treated as minimatch pattern.
 
 - `globRequireDir({ cwd: './Controllers' })`
-If only one argument is specified and the argument is an **object**, it will be treated as [options](#Options) object.
+If only one argument is specified and the argument is an **object**, it will be treated as [options](#options) object.
 
 - `globRequireDir('Controllers/', { transform: ['uppercase'] })`
 If two arguments are given, the first argument will be used as **minimatch pattern** while the second argument will be used as **options object**.
