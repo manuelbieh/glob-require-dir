@@ -76,7 +76,7 @@ If two arguments are given, the first argument will be used as **minimatch patte
 
 ## Options
 
-`glob-require-dir` supports a number of options. You can either specify them 
+`glob-require-dir` supports a number of options. You can pass them as single or as second parameter to the `globRequireDir()` function.
 
 ### .transform [Array, String]
 **Default:**: `['camelcase', 'basename']`
