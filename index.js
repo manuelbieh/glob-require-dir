@@ -87,9 +87,11 @@ module.exports = (...args) => {
 
     files.forEach((file) => {
 
-        if (file !== parentFile) {
+        const resolvedPath = path.resolve(basePath, file);
 
-            let loadedModule = require(path.resolve(basePath, file));
+        if (resolvedPath !== parentFile) {
+
+            let loadedModule = require(resolvedPath);
 
             if (esModules && typeof loadedModule.default !== 'undefined') {
                 loadedModule = loadedModule.default;
