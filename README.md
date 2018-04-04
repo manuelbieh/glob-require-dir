@@ -18,7 +18,13 @@ This module was inspired by [require-dir](https://www.npmjs.com/package/require-
 
 ## Installation
 
-`npm install glob-require-dir`
+```
+npm install glob-require-dir
+```
+or
+```
+yarn add glob-require-dir
+```
 
 ## Examples
 Given this directory structure:
@@ -32,7 +38,7 @@ Controllers/
 
 `require('glob-require-dir')({cwd: './Controllers'})` will return the equivalent of:
 
-```
+```js
 { 
   League: require('./Controllers/League.js'), 
   Player: require('./Controllers/Player.js'), 
@@ -42,17 +48,17 @@ Controllers/
 
 The easiest and recommended way to use `glob-require-dir` is to create an `index.js` within your desired directory and add the following line:
 
-```
+```js
 module.exports = require('glob-require-dir')();
 ```
 
 You can then use `const Controllers = require('./Controllers');` to have all your controllers in your `Controllers` variable. Doing it this way you can also use [ES2015 object destructuring](http://www.2ality.com/2015/01/es6-destructuring.html):
 
-```
+```js
 const { League, Player } = reqiure('./Controllers');
 ```
 or as ES module:
-```
+```js
 import { League, Player } from './Controllers';
 ```
 
@@ -86,7 +92,7 @@ If two arguments are given, the first argument will be used as **minimatch patte
 `glob-require-dir` uses transformer functions (or short: *transforms*) when creating the keys for the exported hash. By default the full path of a matching file will be camelCased and then basenamed (in other words: the file extension will be dropped). There are a number of supported transforms (UPPERCASE, lowercase, camelCase, snake_case, …) but you can also deactivate it completely or write your own **custom transformer functions**. Custom transformer functions take the current filename as only argument and must return the transformed key as string. 
 
 #### Example: 
-```
+```js
 globRequireDir({
   transform: [
     'basename', // get the basename of a matching file first
@@ -109,14 +115,14 @@ The `recursive` option prefixes your pattern (no matter if a custom pattern is g
 Appends a string to the transformed key. 
 
 #### Example:
-```
+```js
 globRequireDir({ 
   cwd: './Controllers',
   append: 'Controller'
 });
 ```
 would yield an object like:
-```
+```js
 { 
   LeagueContoller: […], 
   PlayerContoller: […], 
@@ -143,3 +149,7 @@ All glob options with the exception of `cwd` (which is used internally) and `nod
 **Default:** `['**/node_modules**']`
 
 Shortcut to globOptions.ignore for convenience. You can specify a pattern or an array of patterns which will be ignored while loading files.
+
+## License
+
+MIT
