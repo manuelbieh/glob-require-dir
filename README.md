@@ -9,7 +9,7 @@ This module was inspired by [require-dir](https://www.npmjs.com/package/require-
 ## Goals of this module: 
 - ✅ Destructuring support (`const { foo, bar } = require('baz');` and even `import { foo, bar } from './baz'`)
 - ✅ Recursive loading of modules within a (sub)directory
-- ✅ Default set of module key transformation (e.g. ´camelcase` to return `my-module` as `myModule`)
+- ✅ Default set of module key transformation (e.g. `camelcase` to return `my-module` as `myModule`)
 - ✅ Custom transformation functions to modify keys in the generated hash.
 - ✅ Basic support for ES module `export default`
 - ✅ Based on [`node-glob`](https://github.com/isaacs/node-glob) with support for [node-glob options](https://github.com/isaacs/node-glob#options) and glob patterns
